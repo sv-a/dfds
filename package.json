@@ -1,0 +1,85 @@
+{
+  "name": "@dfds/test",
+  "version": "1.0.0",
+  "homepage": ".",
+  "author": "Stefan Vrskovy <stefan.vrskovy@gmail.com>",
+  "main": "dist/index.js",
+  "module": "dist/",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "build-storybook": "build-storybook -s public",
+    "start": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "react-scripts test --setupFiles ./.storybook/setupFiles.js",
+    "prettier": "prettier --check src/**/**/*.tsx",
+    "lint": "./node_modules/.bin/eslint \"./src/**/*\""
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@emotion/react": "11.4.1",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@testing-library/user-event": "12.1.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "7.6.2",
+    "react-scripts": "4.0.3",
+    "typescript": "4.2.4",
+    "web-vitals": "1.0.1"
+  },
+  "devDependencies": {
+    "@emotion/babel-preset-css-prop": "11.2.0",
+    "@emotion/styled": "11.3.0",
+    "@storybook/addon-actions": "6.3.1",
+    "@storybook/addon-essentials": "6.3.1",
+    "@storybook/addon-links": "6.3.1",
+    "@storybook/node-logger": "6.3.1",
+    "@storybook/preset-create-react-app": "3.1.7",
+    "@storybook/react": "6.3.1",
+    "@storybook/testing-react": "0.0.18",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "react-testing": "1.0.6",
+    "storybook-addon-styled-component-theme": "2.0.0",
+    "storybook-dark-mode": "1.0.8",
+    "ts-loader": "7.0.5",
+    "webpack": "4.43.0",
+    "webpack-cli": "4.8.0"
+  }
+}

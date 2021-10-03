@@ -1,0 +1,68 @@
+{
+	"rules" : {
+		"no-undef" : 2,
+		"react/react-in-jsx-scope": 0,
+		"react/jsx-key": ["error", { "checkFragmentShorthand": true }],
+		"object-shorthand": "error",
+		"object-curly-spacing": ["error", "always", { "arraysInObjects": false } ],
+		"object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": true } ],
+		"block-spacing": "error",
+		"keyword-spacing": "error",
+		"no-else-return": ["error", { "allowElseIf": false } ],
+		"no-trailing-spaces": "error",
+		"padding-line-between-statements": [
+			"error",
+			{ 
+				"blankLine": "always", 
+				"prev": ["if", "return"], 
+				"next": "*"
+			}
+		]
+	},
+	"parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+		"project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"react",
+		"react-hooks", 
+		"@typescript-eslint"
+	],
+  "extends": [
+		"eslint:recommended", 
+		"plugin:react/recommended", 
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"ignorePatterns": [
+		"src/serviceWorker.js", 
+		"src/**/*.json", 
+		"src/**/*.png", 
+		"src/**/*.js", 
+		"src/**/*.d.ts", 
+		"src/**/*.module.scss", 
+		"*.snap"
+	],
+	"settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+	"overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ],
+	"env": {
+    "browser": true,
+    "node": true
+  }
+}

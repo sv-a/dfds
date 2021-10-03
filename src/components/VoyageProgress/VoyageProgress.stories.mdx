@@ -1,0 +1,54 @@
+import { Preview, Meta, Story, Canvas, Props, ArgsTable, Description } from '@storybook/addon-docs/blocks';
+import { VoyageProgress } from './VoyageProgress';
+
+<Description of={VoyageProgress} />
+
+<Meta title="MDX/VoyageProgress" component={VoyageProgress} />
+
+export const Template = (args) => <VoyageProgress {...args} />
+
+<Preview>
+  <Story name="VoyageProgress" argTypes={{
+    currentTime: {
+      control: {
+        type: 'date',
+      },
+    },
+    departureTime: {
+      control: {
+        type: 'date',
+      },
+      defaultValue: 1633068000000,
+    },
+    arrivalTime: {
+      control: {
+        type: 'date',
+      },
+      defaultValue: 1633086000000,
+    },
+    currentTime: {
+      control: {
+        type: 'date',
+      },
+      defaultValue: 1633075200000,
+    },
+    portOfDischarge: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Klaipeda',
+    },
+    portOfLoading: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Karlshamn',
+    },
+  }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={VoyageProgress} />

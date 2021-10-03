@@ -1,0 +1,5 @@
+*.test.tsx
+/node_modules
+/public
+/storybook-static
+*.stories.mdx
