@@ -50,7 +50,7 @@ export const VoyageProgress: FC<IProps> = ({
   // use Math.floor to return integer less or equal to a given number. Use clamp function to ensure min and max amount of steps to be rendered properly.
   const flooredStepper = clamp(Math.floor((percentage() / 100) * 13), 0, 13);
 
-  const voyagerImageTransformTranslate = clamp(flooredStepper * 40, 0, 520); // 40 is value of pixels each step should move in order Voyage renders in right place
+  const voyagerImageTransformTranslate = (520 * percentage()) / 100;
 
   return (
     <div data-testid="voyager-test">
@@ -128,4 +128,5 @@ const StyledVoyagerImg = styled.img<StyledVoyagerImage>`
   display: block;
   width: 100px;
   margin: 0 0 15px 0;
+  transition: transform 300ms ease-in-out;
 `;
